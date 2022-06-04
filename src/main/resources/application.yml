@@ -1,0 +1,39 @@
+server:
+  port: 8000
+
+spring:
+  main:
+    allow-circular-references: true
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/demo?characterEncoding=UTF-8&serverTimezone=asia/seoul
+    username: "root"
+    password: "1234"
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true #To beautify or pretty print the SQL
+        show_sql: true #show sql
+
+graphql:
+  servlet:
+    enabled: true
+    mapping: /graphql
+    corsEnabled: false
+    cors:
+      allowed-origins: http://localhost:8080
+      allowed-methods: GET, HEAD, POST, PATCH
+    exception-handlers-enabled: true
+    context-setting: PER_REQUEST_WITH_INSTRUMENTATION
+    async-mode-enabled: true
+  tools:
+    schema-location-pattern: "**/*.graphqls"
+    introspection-enabled: true
+
+logging:
+  level:
+    com.eat.eatplace: DEBUG
