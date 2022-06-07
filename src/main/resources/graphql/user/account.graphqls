@@ -1,3 +1,12 @@
 type Account{
+    id : ID!
+    providerType : ProviderType!
+    username : String!
+    password : String
+    email : String
+    birth : String
+    age : Int
+    joinDt : String
+    team : Team
 
 }

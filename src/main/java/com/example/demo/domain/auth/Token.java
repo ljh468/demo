@@ -1,11 +1,11 @@
 package com.example.demo.domain.auth;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-@Data
+@Getter
 @Builder
 public class Token {
     private final String accessToken;

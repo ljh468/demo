@@ -1,5 +1,7 @@
 type Query{
     # Account
-    getCurrentAccount: Account
-    getAccountByToken: Account
+    getCurrentAccount : Account
+    getAccountByToken : Account
+    emailCheck : Boolean
+
 }

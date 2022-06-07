@@ -12,7 +12,7 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
 
     // Username을 기준으로해서 권한정보와 유저정보를 함께 가져옴
     @EntityGraph(attributePaths = "authorities")
-    Optional<Account> findOneWithAuthoritiesByUsername(String username);
+    Optional<Account> findOneWithAuthoritiesByEmail(String email);
 
     // 이메일을 기준으로  유정정보를 가져옴
     Optional<Account> findByEmail(String email);

@@ -39,7 +39,7 @@ public class AccountService {
      */
     @Transactional(readOnly = true)
     public Optional<Account> getCurrentUsername() {
-        return SecurityUtil.getCurrentUsername().flatMap(accountRepository::findOneWithAuthoritiesByUsername);
+        return SecurityUtil.getCurrentUsername().flatMap(accountRepository::findOneWithAuthoritiesByEmail);
     }
 
     public Account getCurrentAccount() {
@@ -52,5 +52,14 @@ public class AccountService {
                 })
                 .flatMap(accountRepository::findByEmail)
                 .orElseThrow(() -> new EmailNotFoundException(username.get()));
+    }
+
+    /**
+     * 이메일 중복체크
+     */
+    public Boolean emailCheck(String email) {
+        Optional<Account>Account = accountRepository.findByEmail(email);
+        // 계정이 있으면 true, 없으면 false
+        return Account.isPresent();
     }
 }

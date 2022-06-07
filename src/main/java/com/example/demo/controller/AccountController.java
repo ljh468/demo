@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.domain.account.Account;
 import com.example.demo.domain.account.AccountService;
+import com.example.demo.domain.account.input.SignUpInput;
 import com.example.demo.dto.AccountDto;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,7 @@ public class AccountController {
     private AccountService accountService;
 
     @PostMapping("/register")
-    public ResponseEntity<Account> register(@RequestBody AccountDto accountDto){
-        return ResponseEntity.ok(accountService.registerAccount(accountDto));
+    public ResponseEntity<Account> register(@RequestBody SignUpInput signUpInput){
+        return ResponseEntity.ok(accountService.registerAccount(signUpInput));
     }
 }
