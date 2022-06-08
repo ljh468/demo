@@ -24,13 +24,7 @@ public class AccountService {
      * 유저 회원가입
      */
     @Transactional
-    public Account registerAccount(SignUpInput input) {
-        Account account = Account.builder()
-                .email(input.getUsername())
-                .password(input.getPassword())
-                .age(input.getAge())
-                .joinDt(LocalDate.now())
-                .build();
+    public Account registerAccount(Account account) {
         return accountRepository.save(account);
     }
 

@@ -14,17 +14,17 @@ public class SignUpInput {
      */
     private final ProviderType providerType;
     /**
-     * 유저 이름
+     * 유저 이메일
      */
-    private final String username;
+    private final String email;
     /**
      * 유저 패스워드
      */
     private final String password;
     /**
-     * 유저 이메일
+     * 유저 닉네임
      */
-    private final String email;
+    private final String nickname;
     /**
      * 유저 생년월일
      */
@@ -33,6 +33,11 @@ public class SignUpInput {
      * 유저 나이
      */
     private final Long age;
+
+    /**
+     * 유저 성별
+     */
+    private final String gender;
 
     @Override
     public String toString() {

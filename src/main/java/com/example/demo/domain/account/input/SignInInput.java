@@ -12,7 +12,7 @@ public class SignInInput {
 
     private final ProviderType providerType;
     private final String accessToken;
-    private final String id;
+    private final String email;
     private final String password;
 
     @Override

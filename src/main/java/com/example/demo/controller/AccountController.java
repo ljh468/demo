@@ -21,8 +21,4 @@ public class AccountController {
     @Autowired
     private AccountService accountService;
 
-    @PostMapping("/register")
-    public ResponseEntity<Account> register(@RequestBody SignUpInput signUpInput){
-        return ResponseEntity.ok(accountService.registerAccount(signUpInput));
-    }
 }

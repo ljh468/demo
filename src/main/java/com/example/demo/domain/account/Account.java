@@ -10,6 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -40,9 +41,14 @@ public class Account {
 
     private LocalDate joinDt;
 
-    @Column(nullable = false)
-    @Enumerated(value = EnumType.STRING)
-    private AccountRoleType role;
+    private String useYn;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_authority",
+            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")})
+    private Set<Authority> authorities;
 
     // 카카오 회원번호
     private String identifier;

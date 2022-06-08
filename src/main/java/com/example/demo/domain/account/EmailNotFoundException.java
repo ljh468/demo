@@ -9,10 +9,10 @@ public class EmailNotFoundException extends RuntimeException{
         this.identifier = identifier;
     }
 
-    // 다수의 데이터를 같은 양식으로 출력할 때 주로 사용한다.
     @Override
     public String getMessage(){
-        return MessageFormat.format("User with Identifier ''{0}'' isn''t available", identifier);
+        // 다수의 데이터를 같은 양식으로 출력할 때 주로 사용한다.
+        return MessageFormat.format("회원 고유번호 ''{0}'' 사용이 불가능합니다.", identifier);
     }
 
 }
