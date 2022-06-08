@@ -26,7 +26,7 @@ public class AccountService {
     @Transactional
     public Account registerAccount(SignUpInput input) {
         Account account = Account.builder()
-                .username(input.getUsername())
+                .email(input.getUsername())
                 .password(input.getPassword())
                 .age(input.getAge())
                 .joinDt(LocalDate.now())
@@ -35,7 +35,7 @@ public class AccountService {
     }
 
     /**
-     * SecurityContext에 저장된 유저정보만 가져옴
+     * SecurityContext에 저장된 유저정보 조회
      */
     @Transactional(readOnly = true)
     public Optional<Account> getCurrentUsername() {

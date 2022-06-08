@@ -1,5 +1,6 @@
 package com.example.demo.domain.auth;
 
+import com.example.demo.domain.account.Account;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -53,6 +54,7 @@ public class TokenProvider implements InitializingBean {
         String authorities = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(","));
+
 
         // application.yml에 설정한 만료시간으로 토큰 생성
         long now = (new Date()).getTime();

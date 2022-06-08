@@ -1,12 +1,15 @@
 package com.example.demo.domain.account;
 
 import com.example.demo.domain.Team;
+import com.example.demo.domain.account.type.AccountRoleType;
 import com.example.demo.domain.account.type.GenderType;
 import com.example.demo.domain.account.type.ProviderType;
 import lombok.*;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -36,6 +39,10 @@ public class Account {
     private Long age;
 
     private LocalDate joinDt;
+
+    @Column(nullable = false)
+    @Enumerated(value = EnumType.STRING)
+    private AccountRoleType role;
 
     // 카카오 회원번호
     private String identifier;

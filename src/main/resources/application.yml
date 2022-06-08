@@ -34,6 +34,12 @@ graphql:
     schema-location-pattern: "**/*.graphqls"
     introspection-enabled: true
 
+jwt:
+  header: Authorization
+  # echo 'silvernine-tech-spring-boot-jwt-tutorial-secret-silvernine-tech-spring-boot-jwt-tutorial-secret'|base64
+  secret: ZWF0LXBsYWNlLXNwcmluZy1ib290LWp3dC1zZWNyZXQtZWF0LXBsYWNlLXNwcmluZy1ib290LWp3dC0tc2VjcmV0Cg==
+  token-validity-in-seconds: 86400
+
 logging:
   level:
     com.eat.eatplace: DEBUG
